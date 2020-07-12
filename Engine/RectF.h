@@ -1,0 +1,27 @@
+#pragma once
+#include "Vec2.h"
+#include "Graphics.h"
+
+
+
+
+class RectF {
+
+public:
+	RectF() = default;
+	RectF(const float x_in, const float y_in, const float width_in, const float height_in);
+	RectF(const Vec2& origin, const Vec2& bottom_right);
+	RectF(const Vec2& origin, const float width_in, const float height_in);
+	
+	bool IsOverlappingWith(const RectF& rect_in) const;
+	void Draw(Graphics& gfx, Color c) const;
+
+public:
+	float width;
+	float height;
+	float x;
+	float y;
+	float right = x + width; //Ojo cuando hay que actualizar estos valores
+	float bottom = y + height; //Ojo cuando hay que actualizar estos valores
+	
+};

@@ -21,6 +21,7 @@
 #include "MainWindow.h"
 #include "Game.h"
 
+
 Game::Game( MainWindow& wnd )
 	:
 	wnd( wnd ),
@@ -38,8 +39,10 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
+		
 }
 
 void Game::ComposeFrame()
 {
+	
 }
