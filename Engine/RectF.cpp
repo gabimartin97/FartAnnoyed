@@ -23,6 +23,12 @@ RectF::RectF(const Vec2 & origin, const float width_in, const float height_in, c
 {
 }
 
+RectF::RectF(const Vec2 & center_in, const float radius_in, const Color& c_in)
+	:
+	RectF(Vec2(center_in.x - radius_in, center_in.y - radius_in), radius_in *2, radius_in *2, c_in)
+{
+}
+
 bool RectF::IsOverlappingWith(const RectF & rect_in) const
 {
 	if ((rect_in.right >= x && rect_in.right <= right && rect_in.bottom >= y && rect_in.bottom <= bottom) ||
@@ -40,4 +46,9 @@ bool RectF::IsOverlappingWith(const RectF & rect_in) const
 void RectF::Draw(Graphics& gfx) const
 {
 	gfx.DrawRect(int(x), int (y), int(x + width), int(y + height), c);
+}
+
+void RectF::DrawBorders(Graphics & gfx) const
+{
+	gfx.DrawFrame(int(x), int(y), int(x + width), int(y + height), c);
 }

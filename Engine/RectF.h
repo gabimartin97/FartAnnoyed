@@ -12,9 +12,10 @@ public:
 	RectF(const float x_in, const float y_in, const float width_in, const float height_in, const Color& c_in);
 	RectF(const Vec2& origin, const Vec2& bottom_right, const Color& c_in);
 	RectF(const Vec2& origin, const float width_in, const float height_in, const Color& c_in);
-	
+	RectF(const Vec2& center_in, const float radius_in, const Color& c_in);
 	bool IsOverlappingWith(const RectF& rect_in) const;
 	void Draw(Graphics& gfx) const;
+	void DrawBorders(Graphics& gfx) const;
 
 public:
 	float width;
