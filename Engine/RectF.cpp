@@ -1,24 +1,25 @@
 #include "RectF.h"
 
-RectF::RectF(const float x_in, const float y_in, const float width_in, const float height_in)
+RectF::RectF(const float x_in, const float y_in, const float width_in, const float height_in, const Color& c_in)
 	:
 	x(x_in),
 	y(y_in),
 	width(width_in),
-	height(height_in)
+	height(height_in),
+	c(c_in)
 	
 {
 }
 
-RectF::RectF(const Vec2 & origin, const Vec2 & bottom_right)
+RectF::RectF(const Vec2 & origin, const Vec2 & bottom_right, const Color& c_in)
 	:
-	RectF::RectF(origin.x, origin.y, bottom_right.x - origin.x , bottom_right.y - origin.y)
+	RectF::RectF(origin.x, origin.y, bottom_right.x - origin.x , bottom_right.y - origin.y, c_in)
 {
 }
 
-RectF::RectF(const Vec2 & origin, const float width_in, const float height_in)
+RectF::RectF(const Vec2 & origin, const float width_in, const float height_in, const Color& c_in)
 	:
-	RectF::RectF(origin, Vec2(origin.x + width_in, origin.y + height_in))
+	RectF::RectF(origin, Vec2(origin.x + width_in, origin.y + height_in), c_in)
 {
 }
 
@@ -36,7 +37,7 @@ bool RectF::IsOverlappingWith(const RectF & rect_in) const
 	}
 }
 
-void RectF::Draw(Graphics& gfx, Color c) const
+void RectF::Draw(Graphics& gfx) const
 {
 	gfx.DrawRect(int(x), int (y), int(x + width), int(y + height), c);
 }
