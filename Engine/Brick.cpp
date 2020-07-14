@@ -10,3 +10,5 @@ void Brick::Draw(Graphics & gfx) const
 {
 	rectangle.Draw(gfx);
 }
+
+
