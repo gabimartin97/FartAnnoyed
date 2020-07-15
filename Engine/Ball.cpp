@@ -20,8 +20,7 @@ void Ball::DrawHitbox(Graphics & gfx) const
 void Ball::Update(const float dt)
 {
 	position += velocity * dt;
-	hitbox.x += velocity.x * dt;
-	hitbox.y += velocity.y * dt;
+	hitbox.Update((velocity.x * dt), (velocity.y * dt));
 }
 
 void Ball::DoWallCollision()
@@ -57,4 +56,9 @@ void Ball::SwitchVelocityX()
 void Ball::SwitchVelocityY()
 {
 	velocity.y = -velocity.y;
+}
+
+RectF Ball::GetHitbox() const
+{
+	return hitbox;
 }

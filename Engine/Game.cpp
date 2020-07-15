@@ -27,7 +27,7 @@ Game::Game(MainWindow& wnd)
 	wnd(wnd),
 	gfx(wnd),
 	ladrillin(Vec2(300.0f, 300.0f), 60, 20, Colors::Blue),
-	bolita(Vec2(200.0f, 200.0f), Vec2(-150.0f, 100.0f))
+	bolita(Vec2(200.0f, 200.0f), Vec2(-200.0f, 100.0f))
 {
 }
 
@@ -44,11 +44,16 @@ void Game::UpdateModel()
 	const float dt = frameTimer.Mark();
 	bolita.Update(dt);
 	bolita.DoWallCollision();
+		if (!ladrillin.IsDestroyed()) {
+		ladrillin.DoBallCollision(bolita);
+	}
 }
 
 void Game::ComposeFrame()
 {
-	ladrillin.Draw(gfx);
+	if (!ladrillin.IsDestroyed()) {
+		ladrillin.Draw(gfx);
+	}
 	bolita.Draw(gfx);
 	bolita.DrawHitbox(gfx);
 }

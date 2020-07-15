@@ -15,6 +15,7 @@ public:
 	void DoWallCollision();
 	void SwitchVelocityX();
 	void SwitchVelocityY();
+	RectF GetHitbox() const;
 private:
 	Vec2 position; //centro
 	Vec2 velocity;
