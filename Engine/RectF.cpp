@@ -52,3 +52,11 @@ void RectF::DrawBorders(Graphics & gfx) const
 {
 	gfx.DrawFrame(int(x), int(y), int(x + width), int(y + height), c);
 }
+
+void RectF::Update(float deltaX, float deltaY)
+{
+	x += deltaX;
+	y += deltaY;
+	right = x + width;
+	bottom = y + height;
+}

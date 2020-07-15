@@ -16,7 +16,7 @@ public:
 	bool IsOverlappingWith(const RectF& rect_in) const;
 	void Draw(Graphics& gfx) const;
 	void DrawBorders(Graphics& gfx) const;
-
+	void Update(float deltaX, float deltaY);
 public:
 	float width;
 	float height;
