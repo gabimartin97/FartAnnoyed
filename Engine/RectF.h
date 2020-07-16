@@ -17,6 +17,7 @@ public:
 	void Draw(Graphics& gfx) const;
 	void DrawBorders(Graphics& gfx) const;
 	void Update(float deltaX, float deltaY);
+	
 public:
 	float width;
 	float height;

@@ -28,6 +28,7 @@
 #include "Vec2.h"
 #include "Brick.h"
 #include "Ball.h"
+#include "Paddle.h"
 
 class Game
 {
@@ -50,6 +51,8 @@ private:
 	FrameTimer frameTimer;
 	Brick ladrillin;
 	Ball bolita;
+	Paddle pad;
+	
 
 	/********************************/
 };

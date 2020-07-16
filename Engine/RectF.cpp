@@ -60,3 +60,4 @@ void RectF::Update(float deltaX, float deltaY)
 	right = x + width;
 	bottom = y + height;
 }
+
