@@ -17,6 +17,7 @@ public:
 	void Draw(Graphics& gfx) const;
 	void DrawBorders(Graphics& gfx) const;
 	void Update(float deltaX, float deltaY);
+	void Update(Vec2& loc_in);
 	
 public:
 	float width;

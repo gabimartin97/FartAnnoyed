@@ -61,3 +61,11 @@ void RectF::Update(float deltaX, float deltaY)
 	bottom = y + height;
 }
 
+void RectF::Update(Vec2 & loc_in)
+{
+	x = loc_in.x;
+	y = loc_in.y;
+	right = x + width;
+	bottom = y + height;
+}
+

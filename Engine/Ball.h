@@ -19,9 +19,9 @@ public:
 private:
 	Vec2 position; //centro
 	Vec2 velocity;
-	static const int radius = 7;
+	const float radius = 7.0;
 	static constexpr Color hitboxColor = Colors::Red;
-	RectF hitbox = RectF(position, float(radius), hitboxColor);
+	RectF hitbox = RectF(position, radius, hitboxColor);
 	
 	
 

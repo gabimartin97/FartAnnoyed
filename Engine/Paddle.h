@@ -16,7 +16,7 @@ public:
 private:
 	Vec2 location;
 	RectF rectangle;
-	static constexpr float speed = 200;
+	static constexpr float speed = 200.0f;
 	static constexpr Color mainColor = Colors::Red;
 
 

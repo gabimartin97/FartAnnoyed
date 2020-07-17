@@ -25,25 +25,25 @@ void Ball::Update(const float dt)
 
 void Ball::DoWallCollision()
 {
-	if (hitbox.x <= 0) {
-		position.x = 0 + radius + 1;
-		hitbox.x = 1;
+	if (hitbox.x <= 0.0f) {
+		position.x = 0.0f + radius + 1.0f;
+		hitbox.x = 1.0f;
 		SwitchVelocityX();
 	}
 	else if (hitbox.x + 2*radius >= Graphics::ScreenWidth) {
-		position.x = Graphics::ScreenWidth - radius - 1;
-		hitbox.x = Graphics::ScreenWidth - 1 - (2*radius);
+		position.x = Graphics::ScreenWidth - radius - 1.0f;
+		hitbox.x = Graphics::ScreenWidth - 1.0f - (2*radius);
 		SwitchVelocityX();
 	}
 
-	if (hitbox.y <= 0) {
-		position.y = 0 + radius + 1;
-		hitbox.y = 1;
+	if (hitbox.y <= 0.0f) {
+		position.y = 0.0f + radius + 1.0f;
+		hitbox.y = 1.0f;
 		SwitchVelocityY();
 	}
 	else if (hitbox.y + 2*radius >= Graphics::ScreenHeight) {
-		position.y = Graphics::ScreenHeight - radius - 1;
-		hitbox.y = Graphics::ScreenHeight - 1 - (2 * radius);
+		position.y = Graphics::ScreenHeight - radius - 1.0f;
+		hitbox.y = Graphics::ScreenHeight - 1.0f - (2 * radius);
 		SwitchVelocityY();
 	}
 }

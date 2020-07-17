@@ -26,8 +26,8 @@ Game::Game(MainWindow& wnd)
 	:
 	wnd(wnd),
 	gfx(wnd),
-	ladrillin(Vec2(300.0f, 300.0f), 60, 20, Colors::Blue),
-	bolita(Vec2(200.0f, 200.0f), Vec2(-200.0f, 100.0f)),
+	ladrillin(Vec2(300.0f, 300.0f), 60.0f, 20.0f, Colors::Blue),
+	bolita(Vec2(200.0f, 200.0f), Vec2(-300.0f, 150.0f)),
 	pad(Vec2(300.0f, 500.0f),100.0f, 20.0f)
 {
 }
@@ -46,6 +46,7 @@ void Game::UpdateModel()
 	bolita.Update(dt);
 	bolita.DoWallCollision();
 	pad.Update(wnd.kbd, dt);
+	pad.DoWallCollision();
 	pad.DoBallCollision(bolita);
 		if (!ladrillin.IsDestroyed()) {
 		ladrillin.DoBallCollision(bolita);
